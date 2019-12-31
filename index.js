@@ -19,3 +19,15 @@ function reverseString(myString) {
   }
 }
 
+//write out a recursive fn to see if a word is a palindrome - rtns true or false
+function isPalindrome(myString) {
+    let l = myString.length;
+  
+    if (l < 2) {
+      return true;
+    } else if (myString[l - 1] === myString[0]) {
+      return isPalindrome(myString.substring(1, l - 1));
+    } else {
+      return false;
+    }
+  }
