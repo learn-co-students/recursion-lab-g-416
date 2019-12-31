@@ -9,38 +9,45 @@ function printString(myString) {
     }
   }
 
-function reverseString(myString){ 
-    if (myString.length > 1) {
-        return reverseString(myString.substr(1)) + myString.charAt(0)
-    } else {
+function reverseString(myString) {
+    if (myString.length < 2) {
       return myString;
+    } else {
+      return reverseString(myString.substring(1)) + myString[0];
     }
   }
 
-function isPalindrome(string){
-    if (string === reverseString(string.substr(1)) + string.charAt(0))
-        return true
-    else
-        return false
-}
+  function isPalindrome(myString) {
+    let l = myString.length;
+  
+    if (l < 2) {
+      return true;
+    } else if (myString[l - 1] === myString[0]) {
+      return isPalindrome(myString.substring(1, l - 1));
+    } else {
+      return false;
+    }
+  }
 
-function addUpTo(arr, i){
-    
-    
-}
+  function addUpTo(myArray, index) {
+      // given index, return that index plus recursively add one less index. Else return original index.
+    return index ? myArray[index] + addUpTo(myArray, --index) : myArray[index];
+  }
 
-function maxOf(arr){
-    let nums = arr.slice();
+  function maxOf(myArray) {
+    if (myArray.length === 1) {
+      return myArray[0];
+    } else {
+      return Math.max(myArray.pop(), maxOf(myArray));
+    }
+  }
 
-    if (nums.length == 1) { return nums[0]; }
-
-    if (nums[0] < nums[1]) { nums.splice(0,1); }
-    else { nums.splice(1,1); }
-
-    return maxOf(nums);
-}
-
-function includesNumber(arr, num){
-    let nums = arr.slice()
-    
-}
+  function includesNumber(myArray, myNumber) {
+    if (!myArray.length) {
+      return false;
+    } else if (myArray[0] === myNumber) {
+      return true;
+    } else {
+      return includesNumber(myArray.slice(1), myNumber);
+    }
+  }
