@@ -31,3 +31,9 @@ function isPalindrome(myString) {
       return false;
     }
   }
+
+//Given an array and an index, write a recursive function to add up the elements of an array.
+  //javascript does have a subarray fn
+function addUpTo(arr) {
+    
+}
