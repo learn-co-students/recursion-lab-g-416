@@ -2,6 +2,7 @@ function printString(myString){
     console.log(myString[0]);
 
     if (myString.length > 1){
+      console.log(myString);
         let mySubString = myString.substring(1, myString.length);
         printString(mySubString);
     } else {
@@ -34,6 +35,28 @@ function isPalindrome(myString) {
 
 //Given an array and an index, write a recursive function to add up the elements of an array.
   //javascript does have a subarray fn
-function addUpTo(arr) {
-    
+  function addUpTo(myArray, index) {
+    console.log('myArray[index]', myArray[index]);
+    return index ? myArray[index] + addUpTo(myArray, --index) : myArray[index];
+  }
+
+  //Write a recursive function to find the largest integer in an array
+    // [1, 4, 5, 3]
+    function maxOf(myArray) {
+      if (myArray.length === 1) {
+        return myArray[0];
+      } else {
+        return Math.max(myArray.pop(), maxOf(myArray));
+      }
+    }
+
+//Write out a function to see if an array includes a given element.
+function includesNumber(myArray, myNumber) {
+  if (!myArray.length) {
+    return false;
+  } else if (myArray[0] === myNumber) {
+    return true;
+  } else {
+    return includesNumber(myArray.slice(1), myNumber);
+  }
 }
