@@ -1,27 +1,32 @@
 // Code your solution here!
-function printString(string) { 
 
+function printString(string) {
     console.log(string[0]);
-
+    
     if (string.length > 1) {
-        let substring = string.substring(1, string.length); 
-        printString(substring);
+        printString(string.substring(1));
     } else {
         return true;
     }
 }
 
 
+// function reverseString(string) {
+//     if (string === "") {
+//         return string
+//     } else {
+//         return reverseString(string.substr(1)) + string[0]
+//     }
+// }
+
 function reverseString(string) {
-    if (string === "") {
+    console.log(string)
+    if (string.length > 0) {
+        return reverseString(string.substring(1)) + string[0];
+    } else if (string === "") {
         return string
-    } else {
-        return reverseString(string.substr(1)) + string[0]
     }
 }
-// Note that string and the recursive (string.substring(1) + string[0]) are not the same thing. 
-// The original string gets cycled through and is compared against in if (string === "").
-// However, return string, refers to the recursive string value that is changing with every cycle through the codeblock.
 
 
 function isPalindrome(string) {
