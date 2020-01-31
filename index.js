@@ -11,31 +11,31 @@ function printString(string) {
 }
 
 
-// function reverseString(string) {
-//     if (string === "") {
-//         return string
-//     } else {
-//         return reverseString(string.substr(1)) + string[0]
-//     }
-// }
-
 function reverseString(string) {
-    console.log(string)
     if (string.length > 0) {
-        return reverseString(string.substring(1)) + string[0];
+        console.log(reverseString(string.substring(1)) + string[0])
     } else if (string === "") {
-        return string
+        console.log(string)
     }
 }
+// I find the this particular recursive function to be a mind-bender due to the return statement.
+let string = "string"
+reverseString(string)
+// => undefinedg
+// => undefinedn
+// => undefinedi
+// => undefinedr
+// => undefinedt
+// => undefineds
 
 
 function isPalindrome(string) {
-    let l = string.length;
+    let length = string.length;
 
-    if (l < 2) {
+    if (length < 2) {
         return true;
-    } else if (string[0] === string[l - 1]) {
-        return isPalindrome(string.substring(1, l - 1));
+    } else if (string[0] === string[length - 1]) {
+        return isPalindrome(string.substring(1, length - 1));
     } else {
         return false;
     }
