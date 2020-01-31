@@ -3,17 +3,17 @@ let myString = 'Algorithm'
 
 let string = "pizza"
 
-function printAllCharactersOfNStringLength (str) {
+function printString(str) {
    //str = "pizza"
    if (str.length > 1) {
       console.log(str[0])
-      printAllCharactersOfNStringLength(str.substring(1, str.length))
+      printString(str.substring(1, str.length))
    } else {
       return console.log(str[0])
    }
 }
 
-printAllCharactersOfNStringLength(myString)
+printString(myString)
 
 // // End goal = " p i z z a "
 // pizza 
