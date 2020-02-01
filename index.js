@@ -43,14 +43,43 @@ function reverseString(str) {
    let result = ""
    if (str.length > 1) {
       result = str[str.length - 1] + reverseString(str.substring(0, str.length - 1))
-
    } else {
       return str[0]
    }
    return result
 }
 
-console.log(reverseString("pizza"))
+// Specific use case - "pizza" 
+// write a function to manually get the solution 
+// function isRacecarPalindrome(str) {
+   // str = "racecar"
+   // str = "hannah"
+   // are the first and last characters of my string the same?  if so, call myself again on the substring recursively until the length of my substring is less than or = 1 (length must be greater than or = to 2 to continue recursion).
+   // if the letters do not match from those two positions, then return false. 
+// }
+// Actual Logic for success: 
+// if my test string is greater than 2 characters, check to see if the first and last character are not the same. if they arent, go to false and then don't recur.  If they are the same, then recur on the substring with the first and last positions cut off. and save that as my result.  When a even charactered palendrome is detected (last recursion has a length of 2 - check to see if they are the same, if they are, then result = true (base case), if not, result is set to false), otherwise, if you get to a string length of 1 or 0, that means that you have passed the comparison test down to 1 character or 0 characters meaning you have a palendrome, so return true. 
+
+function isPalindrome(str) {
+   let result
+   if (str.length > 2) {
+      if (str[0] !== str[str.length - 1]) {
+         result = false
+      } else {
+         result = isPalindrome(str.substring(1, str.length - 1))
+      }   
+   // this else if isn't necessary for the tests to pass, but prevents false positives with small inputs of "ce" or something like that.
+   } else if (str.length === 2) {
+      str[0] === str[1] ? result = true : result = false
+   } else {
+      result = true
+   }
+   return result
+}
+
+console.log(isPalindrome("madam"))
+
+// Will need to pickup here with some array work. 
 
 
 
