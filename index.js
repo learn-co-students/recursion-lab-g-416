@@ -77,7 +77,7 @@ function isPalindrome(str) {
    return result
 }
 
-//console.log(isPalindrome("madam"))
+// console.log(isPalindrome("madam"))
 
 // Array Work now
 // addUpTo() function needs to be able to sum up all members in an array to a given index. 
@@ -108,16 +108,73 @@ function addUpToExample(array, index) {
 // This solution is more true to the name of the function as it starts with the first number in the array to add up to, then passes in a smaller version of the array to itself recursively until it hits an array length of less than 1 and a 0 index, then stop recursion and return the result of array[0] (which is the value at the index) and add them all together, then return the result.
 function addUpTo(array, index) {
    let result
-   console.log("array", array)
-   console.log("index", index)
+   // console.log("array", array)
+   // console.log("index", index)
    if (array.length > 1 && index !== 0) {
       let smallerArray = array.slice(1, index + 1)
-      console.log("smallerArray", smallerArray)
+      // console.log("smallerArray", smallerArray)
       result = array[0] + addUpTo(smallerArray, index - 1)
    } else {
       result = array[0]
    }
    return result
 }
+// console.log(addUpTo([2, 4, 6, 8, 1], 2))
 
-//console.log(addUpTo([2, 4, 6, 8, 1], 2))
+
+//maxOf - find the largest integer in an array
+// 1 solve with an example
+
+function maxOfExample(array) {
+   // array = [1, 4, 5, 3]
+   // return should the the maximum number found in the array 
+   // return value should be 5
+
+   // solution:
+   // is currentGreatest > array[0] ?  if so, update the currentGreatest value to array[0]'s value, run myself again on a smaller slice of the array excluding the index I've tried already, until I reach the end of the array.  At the end, return the currentGreatest. 
+   let currentGreatest = 0 
+   if (array[0] > currentGreatest) {
+      currentGreatest = array[0]
+   }
+
+   if (array[1] > currentGreatest) {
+      currentGreatest = array[1]
+   }
+
+   if (array[2] > currentGreatest) {
+      currentGreatest = array[2]
+   }
+
+   if (array[3] > currentGreatest) {
+      currentGreatest = array[3]
+   }
+
+   return currentGreatest 
+}
+
+// console.log("maxOfExample: ", maxOfExample([1, 4, 5, 3]))
+//solved with Example. 
+
+// How do I reword this using my function name? 
+// to find my greatest value, I will initially set my greatest value to 0.  Then if my array is > 1 in length, compare array[0] with currentMax.  If array[0] is greater, then update currentMax, else don't update.  Then call myself again on a slice of the array that excludes the "array[0]" i just worked on. When I get down to an array of 1 in length as soon as my array is empty, return my currentMax Value. 
+
+function maxOf(array, currentMax = 0) {
+   // console.log("array:", array)
+   // console.log("currentMax:", currentMax)
+   if (array.length > 1) {
+      if (array[0] > currentMax) {
+         currentMax = array[0]
+         // console.log("updated current max:", currentMax)
+         currentMax = maxOf(array.slice(1, array.length), currentMax)
+      } else {
+         // console.log("didn't update current max")
+         currentMax = maxOf(array.slice(1, array.length), currentMax)
+      }  
+   } else {
+      //base case comparision / return value goes below.  This is the smallest unit of what you are going to compare - 1 on 1.  This actually allows you to return a result.  Then you can work through the logic in the above 'if' to sift the rest of the array objects. 
+      return currentMax = currentMax > array[0] ? currentMax : array[0]
+   }
+   return currentMax
+}
+
+// console.log(maxOf([1, 6, 5, 2]))
