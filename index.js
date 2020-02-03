@@ -178,3 +178,40 @@ function maxOf(array, currentMax = 0) {
 }
 
 // console.log(maxOf([1, 6, 5, 2]))
+
+// ----
+// includesNumber() 
+// returns true if the number is present in the array
+// returns false if the number is not present in the array
+// Example: 
+// includesNumber([1, 4, 5, 3], 5) = true
+// includesNumber([1, 4, 2, 3], 5) = false
+
+// Write an example function
+function includesNumberExample(array, num) {
+   //array = [1, 4, 5, 3]
+   //num = 5 
+   result = false
+   array[0] === num ? result = true : result
+   array[1] === num ? result = true : result 
+   array[2] === num ? result = true : result 
+   array[3] === num ? result = true : result 
+   return result 
+}
+//returns true in this example
+//console.log(includesNumberExample([1, 4, 5, 3], 5))
+
+// my base case is comparing the 'num' with the first value in an array.
+// Then go recursively through smaller and smaller chunks of the array until you find a match, or once you reach the end, return false.   
+
+function includesNumber(array, num, result = false) {
+   if (array.length > 1) {
+      result = (array[0] === num ? true : includesNumber(array.slice(1, array.length), num))
+   } else {
+      //write this statement first then write the stuff above
+      result = (array[0] === num ? true : false)
+   }
+   return result
+}
+console.log(includesNumber([1, 4, 5, 3], 5))
+
