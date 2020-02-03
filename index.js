@@ -79,8 +79,30 @@ function isPalindrome(str) {
 
 console.log(isPalindrome("madam"))
 
-// Will need to pickup here with some array work. 
+// Array Work now
+// addUpTo() function needs to be able to sum up all members in an array to a given index. 
+// 1. Solve with an example and write a function for it. 
+function addUpToExample(array, index) {
+   //array = [2, 4, 6, 8, 1]
+   //index = 2
+   //answer should be 2 + 4 + 6 = 12
+   return (array[0] + array[1] + array[2])
+}
+console.log(addUpToExample([2, 4, 6, 8, 1], 2))
+// 2. Reword solution using your function name 
+// I will add the values of an array upto a specified index. Starting at index 0, until I reach the index specified (base case option 1).  Alternatively, I can start adding at my index and add all indexes below that until I reach 0.  
+// so, first need to take the value of 'index' and add it to my recursive call of a split array with an index of 'index - 1'
 
+// This is really more like AddDownFrom
+function addUpTo(array, index) {
+   let result
+   if (array.length > 1 && index !== 0) {
+      let smallerArray = array.slice(0, index + 1)
+      result = smallerArray[index] + addUpTo(smallerArray, index - 1)
+   } else {
+      result = array[0]
+   }
+   return result
+}
 
-
-
+console.log(addUpTo([2, 4, 6, 8, 1], 2))
