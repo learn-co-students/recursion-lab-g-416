@@ -77,7 +77,7 @@ function isPalindrome(str) {
    return result
 }
 
-console.log(isPalindrome("madam"))
+//console.log(isPalindrome("madam"))
 
 // Array Work now
 // addUpTo() function needs to be able to sum up all members in an array to a given index. 
@@ -88,13 +88,13 @@ function addUpToExample(array, index) {
    //answer should be 2 + 4 + 6 = 12
    return (array[0] + array[1] + array[2])
 }
-console.log(addUpToExample([2, 4, 6, 8, 1], 2))
+// console.log(addUpToExample([2, 4, 6, 8, 1], 2))
 // 2. Reword solution using your function name 
 // I will add the values of an array upto a specified index. Starting at index 0, until I reach the index specified (base case option 1).  Alternatively, I can start adding at my index and add all indexes below that until I reach 0.  
 // so, first need to take the value of 'index' and add it to my recursive call of a split array with an index of 'index - 1'
 
-// This is really more like AddDownFrom
-function addUpTo(array, index) {
+// This is really more like AddDownFrom but gives the same results. 
+/* function addUpTo(array, index) {
    let result
    if (array.length > 1 && index !== 0) {
       let smallerArray = array.slice(0, index + 1)
@@ -103,6 +103,21 @@ function addUpTo(array, index) {
       result = array[0]
    }
    return result
+} */
+
+// This solution is more true to the name of the function as it starts with the first number in the array to add up to, then passes in a smaller version of the array to itself recursively until it hits an array length of less than 1 and a 0 index, then stop recursion and return the result of array[0] (which is the value at the index) and add them all together, then return the result.
+function addUpTo(array, index) {
+   let result
+   console.log("array", array)
+   console.log("index", index)
+   if (array.length > 1 && index !== 0) {
+      let smallerArray = array.slice(1, index + 1)
+      console.log("smallerArray", smallerArray)
+      result = array[0] + addUpTo(smallerArray, index - 1)
+   } else {
+      result = array[0]
+   }
+   return result
 }
 
-console.log(addUpTo([2, 4, 6, 8, 1], 2))
+//console.log(addUpTo([2, 4, 6, 8, 1], 2))
