@@ -11,4 +11,18 @@ function printString(myString) {
   }
 }
 
-function reverseString(string) {}
+function reverseString(myString) {
+  if (myString.length < 2) {
+    return myString;
+  } else {
+    return reverseString(myString.substring(1)) + myString[0];
+  }
+}
+
+function isPalindrome(string) {
+  if (reverseString(string) === string) {
+    return true;
+  } else {
+    return false;
+  }
+}
