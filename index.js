@@ -19,10 +19,24 @@ function reverseString(myString) {
   }
 }
 
-function isPalindrome(string) {
-  if (reverseString(string) === string) {
+function isPalindrome(myString) {
+  let l = myString.length;
+
+  if (l < 2) {
     return true;
+  } else if (myString[l - 1] === myString[0]) {
+    return isPalindrome(myString.substring(1, l - 1));
   } else {
     return false;
   }
+}
+
+
+addUpTo(array, index){
+    let sum = 0
+    while(i = 0, i <= index, i++){
+        
+    }
+    return 
+
 }
