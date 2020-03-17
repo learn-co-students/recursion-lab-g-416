@@ -31,12 +31,6 @@ function isPalindrome(myString) {
   }
 }
 
-
-addUpTo(array, index){
-    let sum = 0
-    while(i = 0, i <= index, i++){
-        
-    }
-    return 
-
+function addUpTo(myArray, index) {
+  return index ? myArray[index] + addUpTo(myArray, --index) : myArray[index];
 }
