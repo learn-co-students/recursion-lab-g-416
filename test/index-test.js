@@ -40,7 +40,6 @@ try {
       var printString = sinon.spy(window, "printString");
 
       printString("pizza")
-
       expect(printString.callCount).toEqual(5)
     });
   });
