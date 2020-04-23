@@ -18,9 +18,12 @@ function printString(myString) {
   }
 
   function isPalindrome(string) {
-      if (string === reverseString(string)) {
-        return true 
-      } else {
+    if (string.length > 2 && string[0] === string[string.length-1]) {
+        let substring = string.substr(1, string.length-2)
+        isPalindrome(substring)
+    } else {
         return false
-      }
+    }
+    return true
   }
+
