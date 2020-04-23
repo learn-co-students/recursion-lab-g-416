@@ -34,7 +34,7 @@ function printString(myString) {
     } else {
         let newArray = [array[0] + array[1]].concat(array.slice(2, index+1))
             let newIndex = index-1
-            addUpTo(newArray, newIndex)
+            return addUpTo(newArray, newIndex)
     }
   }
 
