@@ -46,5 +46,16 @@ function maxOf(array) {
     }
 }  
 
+function includesNumber(array, element){
+    if (array[0] === element) {
+        return true
+    } else if (array.length > 1){
+        array.splice(0,1)
+        return includesNumber(array, element)
+    } else {
+        return false
+    }
+}
+
 
 
