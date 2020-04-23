@@ -37,5 +37,14 @@ function printString(myString) {
     }
   }
 
+function maxOf(array) {
+    if (array.length > 1) {
+        array[0] > array[1] ? array.splice(1,1) : array.splice(0,1)
+        return maxOf(array)
+    } else {
+        return array[0]
+    }
+}  
+
 
 
