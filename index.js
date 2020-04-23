@@ -27,7 +27,23 @@ function printString(myString) {
     return true
   }
 
-  function addUpTo(string, index) {
-
+//   error: expected undefined to equal 10
+  function addUpTo(array, index) {
+    if (index === 0) {
+        return array[0]
+    } else {
+        let newArray = [array[0] + array[1]].concat(array.slice(2, index+1))
+            let newIndex = index-1
+            addUpTo(newArray, newIndex)
+    }
   }
+
+      // if (index !== 0) {
+    //     let newArray = [array[0] + array[1]].concat(array.slice(2, index+1))
+    //     let newIndex = index-1
+    //     addUpTo(newArray, newIndex)
+    //   } else {
+    //       return array[0]
+    //   }
+
 
