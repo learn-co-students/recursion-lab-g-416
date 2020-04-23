@@ -27,3 +27,7 @@ function printString(myString) {
     return true
   }
 
+  function addUpTo(string, index) {
+
+  }
+
