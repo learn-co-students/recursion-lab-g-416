@@ -60,6 +60,7 @@ try {
         .toBeGreaterThanOrEqualTo(5)
         .toBeLessThanOrEqualTo(6)
     });
+
   });
 
   describe('isPalindrome()', function() {
