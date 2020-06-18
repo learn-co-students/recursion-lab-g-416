@@ -10,13 +10,9 @@ function printString(myString) {
   }
 
   function reverseString(myString) {
-      let myReversedString = ""
-      myReversedString.concat(myString[myString.length - 1]);
-
-      if (myString.length > 1) {
-        let mySubString = myString.substring(0, myString.length - 1);
-        reverseString(mySubString);
-      } else {
-          return myReversedString;
-      }
+    if(myString.length > 1) {
+      return myString.slice(-1) + reverseString(myString.slice(0, -1))
+    } else {
+      return myString
+    }
   }
