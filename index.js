@@ -11,8 +11,20 @@ function printString(myString) {
 
   function reverseString(myString) {
     if(myString.length > 1) {
-      return myString.slice(-1) + reverseString(myString.slice(0, -1))
+      return myString.substring(myString.length - 1) + reverseString(myString.substring(0, myString.length - 1))
     } else {
       return myString
+    }
+  }
+
+  function isPalindrome(myString) {
+    if (myString.length > 1) {
+        if (myString[0] === myString[myString.length - 1]) {
+            return isPalindrome(myString.substring(1, myString.length - 1));
+        } else {
+            return false
+        }
+    } else {
+        return true
     }
   }
