@@ -63,4 +63,4 @@ function includesNumber(arr, num) {
   return false;
 }
 
-console.log(includesNumber([1, 4, 5, 3], 3));
+// console.log(includesNumber([1, 4, 5, 3], 3));
