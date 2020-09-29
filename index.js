@@ -5,7 +5,7 @@ function printString(str) {
 }
 
 function reverseString(myString) {
-  return myString.length < 2 ?
+  return myString.length === 1 ?
     myString :
     reverseString(myString.substring(1)) + myString[0];
 }
