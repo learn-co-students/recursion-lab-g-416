@@ -11,6 +11,13 @@ function printString(myString) {
 
 //STRING CHALLENGES
 //1. reverse a string
+function reverseString(myString) {
+    if (myString.length < 2) {
+      return myString;
+    } else {
+      return reverseString(myString.substring(1)) + myString[0];
+    }
+  }
 //2. see if a word is a palindrome..
 
 //ARRAY CHALLENGES
