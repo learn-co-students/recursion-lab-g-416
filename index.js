@@ -35,6 +35,9 @@ function isPalindrome(myString) {
 
 //ARRAY CHALLENGES
 // 1. Given an array and an index, write a recursive function to add up the elements of an array.
+function addUpTo(myArray, index) {
+    return index ? myArray[index] + addUpTo(myArray, --index) : myArray[index];
+  }
 // 2. Write a recursive function to find the largest integer in an array.
 // 3. Write out a function to see if an array includes a given element.
 
