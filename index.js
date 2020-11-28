@@ -23,3 +23,15 @@ function isPalindrome(string){
     return false
   }
 }
+
+function includesNumber(array){
+
+}
+
+function addUpTo(num){
+
+}
+
+function maxOf(nums){
+
+}
