@@ -11,12 +11,15 @@ function printString(myString) {
 }
 
 function reverseString(string){
-  console.log(string[-1])
+  return (string === '') ? '' : reverseString(string.substr(1)) + string.charAt(0);
+}
 
-  if (string.length > 1) {
-    let mySubString = string.substring(1, string.length);
-    printString(mySubString);
-  } else {
-    return true;
+function isPalindrome(string){
+  let reverse = reverseString(string)
+
+  if(string === reverse){
+    return true
+  }else{
+    return false
   }
 }
