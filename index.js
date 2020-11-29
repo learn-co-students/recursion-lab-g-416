@@ -41,3 +41,14 @@ function addUpTo(array, index) {
   }
   return total;
 }
+
+function maxOf(array, max=undefined) {
+  max = max || array[0];
+  if (array.length > 1) {
+    if (max < array[1]) {
+      max = array[1];
+    }
+    max = maxOf(array.slice(1, array.length), max)
+  }
+  return max;
+}
