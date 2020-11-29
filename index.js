@@ -52,3 +52,15 @@ function maxOf(array, max=undefined) {
   }
   return max;
 }
+
+function includesNumber(array, number) {
+  let hasNumber = false;
+  if (array.length > 0) {
+    if (array[0] === number) {
+      hasNumber = true;
+    } else {
+      hasNumber = includesNumber(array.slice(1, array.length), number);
+    }
+  }
+  return hasNumber;
+}
