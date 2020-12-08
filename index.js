@@ -12,17 +12,10 @@ function printString(myString) {
 
 function reverseString(str) {
     // return str ? reverseString(str.substr(1)) + str[0] : str;
-    // if (str.length > 0) {
-    //     return reverseString(str.substr(1)) + str[0]
-    // } else {
-    //     return str
-    // }
     if (str.length > 0) {
-        let subString = str.substring(1)
-        // or let subString = str.substring(1, str.length - 1)
-        return (str[str.length - 1]) + reverseString(subString)
+        return reverseString(str.substr(1)) + str[0]
     } else {
-        return true
+        return str
     }
 }
 
