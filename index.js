@@ -10,28 +10,24 @@ function printString(myString) {
   }
 }
 
-function reverseString(string){
-  return (string === '') ? '' : reverseString(string.substr(1)) + string.charAt(0);
+function reverseString(string) {
+  return string === ""
+    ? ""
+    : reverseString(string.substr(1)) + string.charAt(0);
 }
 
-function isPalindrome(string){
-  let reverse = reverseString(string)
+function isPalindrome(string) {
+  let reverse = reverseString(string);
 
-  if(string === reverse){
-    return true
-  }else{
-    return false
+  if (string === reverse) {
+    return true;
+  } else {
+    return false;
   }
 }
 
-function includesNumber(array){
+function includesNumber(array) {}
 
-}
+function addUpTo(num) {}
 
-function addUpTo(num){
-
-}
-
-function maxOf(nums){
-
-}
+function maxOf(nums) {}
