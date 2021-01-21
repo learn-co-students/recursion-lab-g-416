@@ -33,3 +33,14 @@ function addUpTo(array, index) {
         return addUpTo(array.slice(0, index), index - 1) + array[index]
     }
 }
+
+function maxOf(array) {
+    let max = array[0];
+    if (array.length === 1) {
+        return max;
+    } else if (max > array[array.length - 1]) {
+        return maxOf(array.slice(0, array.length - 1))
+    } else {
+        return maxOf(array.slice(1))
+    }
+}
