@@ -43,3 +43,23 @@ function maxOf(array) {
         return maxOf(array.slice(1))
     }
 }
+
+function includesNumber(array, n) {
+    if (!array.length) {
+        return false;
+    } else if (array[0] === n) {
+        return true;
+    } else {
+        return includesNumber(array.slice(1), n)
+    }
+}
+
+// function includesNumber(myArray, myNumber) {
+//     if (!myArray.length) {
+//       return false;
+//     } else if (myArray[0] === myNumber) {
+//       return true;
+//     } else {
+//       return includesNumber(myArray.slice(1), myNumber);
+//     }
+//   }
