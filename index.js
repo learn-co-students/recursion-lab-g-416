@@ -53,13 +53,3 @@ function includesNumber(array, n) {
         return includesNumber(array.slice(1), n)
     }
 }
-
-// function includesNumber(myArray, myNumber) {
-//     if (!myArray.length) {
-//       return false;
-//     } else if (myArray[0] === myNumber) {
-//       return true;
-//     } else {
-//       return includesNumber(myArray.slice(1), myNumber);
-//     }
-//   }
