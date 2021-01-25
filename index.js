@@ -11,15 +11,15 @@ function printString(myString) {
 }
 
 function reverseString(string) {
-  return string === ""
-    ? ""
-    : reverseString(string.substr(1)) + string.charAt(0);
+  if (string == "") {
+    return "";
+  } else {
+    return reverseString(string.substr(1)) + string.charAt(0);
+  }
 }
 
 function isPalindrome(string) {
-  let reverse = reverseString(string);
-
-  if (string === reverse) {
+  if (string === reverseString(string)) {
     return true;
   } else {
     return false;
@@ -28,6 +28,6 @@ function isPalindrome(string) {
 
 function includesNumber(array) {}
 
-function addUpTo(num) {}
+function addUpTo(array, index) {}
 
 function maxOf(nums) {}
