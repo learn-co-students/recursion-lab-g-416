@@ -68,14 +68,16 @@ function maxOf(numArray) {
 
 function includesNumber(numArray, target) {
   let nums = numArray;
-  if (nums.length < 1) {
-    return false
-  } else if  (nums[0] =! target) {
-   
-        nums.splice(0, 1)
+  console.log("nums", nums[0], "target", target)
+    if (nums[0] == target) {
+        return true
+    } else if (nums.length < 1) {
+        return false
+      }
+else {
+    nums.splice(0, 1)
         return includesNumber(nums, target)
-    
-  } else {
-      return true
-  }
+}
+
+  
 }
