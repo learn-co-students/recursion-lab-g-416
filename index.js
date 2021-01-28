@@ -51,7 +51,7 @@ function maxOf(numArray) {
   let nums = numArray.slice();
 
   // base case: if we're at the last number, return it
-  if (nums.length == 1) {
+  if (nums.length <= 1) {
     return nums[0];
   }
 
@@ -66,11 +66,16 @@ function maxOf(numArray) {
   return maxOf(nums);
 }
 
-function includesNumber(numArray) {
+function includesNumber(numArray, target) {
   let nums = numArray;
-  if (nums.length == 1) {
-    return nums[0];
+  if (nums.length < 1) {
+    return false
+  } else if  (nums[0] =! target) {
+   
+        nums.splice(0, 1)
+        return includesNumber(nums, target)
+    
   } else {
-      
+      return true
   }
 }
