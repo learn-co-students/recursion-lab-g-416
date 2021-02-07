@@ -28,17 +28,16 @@ function isPalindrome(string) {
   return isPalindrome(string.substr(1, string.length - 2));
 }
 
-function includesNumber(array) {}
-
 function addUpTo(array, index) {
-  //take index number
-  // have a count
-  // count + indexOf(index)
-  // index - 1
-  // count + indexOf(index)
+  if (index == 0) {
+    return array[index];
+  }
 
-  let sum = 0;
-  sum += indexOf(index);
+  if (index !== 0) {
+    return array[index] + addUpTo(array, index - 1);
+  }
 }
 
 function maxOf(nums) {}
+
+function includesNumber(array) {}
