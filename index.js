@@ -39,3 +39,7 @@ function maxOf(array) {
     return Math.max(array.pop(), maxOf(array))
   }
 }
+
+function includesNumber(array) {
+  
+}
