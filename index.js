@@ -33,5 +33,5 @@ function addUpTo(myArray, index) {
 }
 
 function maxOf(myArray) {
-  
+
 }
