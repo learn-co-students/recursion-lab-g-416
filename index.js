@@ -31,5 +31,14 @@ function isPalindrome(word) {
         }
 }
 
+function addUpTo(myArray, index) {
+    return index ? myArray[index] + addUpTo(myArray, --index) : myArray[index];
+}
 
-
+function maxOf(myArray) {
+    if (myArray.length === 1) {
+      return myArray[0];
+    } else {
+      return Math.max(myArray.pop(), maxOf(myArray));
+    }
+  }
