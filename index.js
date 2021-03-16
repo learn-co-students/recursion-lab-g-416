@@ -56,3 +56,22 @@ function addUpTo(array, index) {
 }
 // addUpTo([1, 4, 5, 3], 2)
 // addUpTo([4, 3, 1, 5], 1)
+
+function maxOf(arr) {
+
+  if (arr.length === 1) return arr[0]
+
+  if (arr[0] > arr[1]) return maxOf(arr.splice(0, 1))
+  if (arr[0] < arr[1]) return maxOf(arr.slice(1))
+}
+
+// maxOf([1, 4, 5, 3])
+
+function includesNumber(arr, num) {
+
+  if (arr[0] === num) return true
+  if (arr.length === 1) return false
+  return includesNumber(arr.slice(1), num)
+}
+
+// includesNumber([1, 4, 5, 3], 5)
