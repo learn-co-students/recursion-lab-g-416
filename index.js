@@ -42,6 +42,17 @@ function isPalindrome(string) {
   }
 }
 
-function addUpTo(array) {
+function addUpTo(array, index) {
+  const first = array[0]
+  const second = array[1]
 
+  if (index === 0) {
+    return first
+  } else {
+    return addUpTo([first + second, ...array.slice(2, array.length)], index - 1)
+  }
+  // Below works too!
+  // return index === 0 ? first : addUpTo([first + second, ...array.slice(2, array.length)], index - 1)
 }
+// addUpTo([1, 4, 5, 3], 2)
+// addUpTo([4, 3, 1, 5], 1)
