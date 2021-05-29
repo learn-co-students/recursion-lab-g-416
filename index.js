@@ -90,13 +90,15 @@ function isPalindrome(string) {
   let firstIdx = 0;
   let lastIdx = string.length - 1;
   let middleString = string.slice(firstIdx+1, lastIdx);
-  console.log(middleString);
+  
+
   // for each recursive call, split string 
   
   // base case: string length <= 1
   
   // condition: string[first] === string[last] && isPalindrome(string[middle])
   
+
   if (string.length === 1) return true;
   
   return string[firstIdx] === string[lastIdx] && isPalindrome(middleString);
@@ -104,33 +106,74 @@ function isPalindrome(string) {
 
 
 
+// problem: sum all numbers upto a given index 
 
 
+// function addUpTo(array, indexInput) {
+//   // specific case
+//   // iterate through array until index reached
+//   // add each num in array to the sum along the iteration 
+//   let sum = 0;
+//   for (let idx = 0; idx <= indexInput; idx++) {
+//     sum += array[idx];
+//   }
+//   return sum;
+// }
 
 
+// recursive solution:
 
 
+function addUpTo(myArray, index) {
+  return index ? myArray[index] + addUpTo(myArray, --index) : myArray[index];
+}
 
+// problem: return max number of an array 
 
+// function maxOf(array) {
+//   // specific solution:
+//   // set a max value to first arary value
+//   // increment through array, updating max value
+//   // if current value is bigger than max 
+//   // return max value
+  
+//   return (
+//     array.reduce((max, currNum) => {
+//       if (max && max < currNum) {
+//         max = currNum;
+//       }
+//       return max;
+//     }, array[0])
+//   )
+// }
 
+// problem: check if a given number is included in the array:
 
+// function includesNumber(array, number) {
+  
+//   return array.includes(number);
+// }
 
+// recursive solution:
 
+function includesNumber(myArray, myNumber) {
+  if (!myArray.length) {
+    return false;
+  } else if (myArray[0] === myNumber) {
+    return true;
+  } else {
+    return includesNumber(myArray.slice(1), myNumber);
+  }
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+function maxOf(array) {
+  if (array.length === 1) {
+    return array[0];
+  } else {
+    return Math.max( array.pop(), maxOf(array) ) 
+  }
+}
 
 
 
